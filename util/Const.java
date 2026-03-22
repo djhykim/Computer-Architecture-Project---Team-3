@@ -1114,11 +1114,11 @@ static {
 		OPCODE.put("000001", "LDR");
 		OPCODE.put("000010", "STR");
 		OPCODE.put("000011", "LDA");
-		//OPCODE.put("000100", "LDX");
+		OPCODE.put("000100", "LDX");
 		OPCODE.put("000101", "STX");
 
 		OPCODE.put("100100", "SETCCE");
-		OPCODE.put("000110", "JCC");
+		OPCODE.put("000110", "JZ");
 		OPCODE.put("000111", "JNE");
 		OPCODE.put("001000", "JZ");
 		OPCODE.put("001001", "JMA");
@@ -1144,15 +1144,43 @@ static {
 
 		OPCODE.put("011010", "IN");
 		OPCODE.put("011011", "OUT");
-		OPCODE.put("011100", "CHK");
+		OPCODE.put("011100", "HLT");
 
-		OPCODE.put("011101", "FADD");
-		OPCODE.put("011110", "FSUB");
-		OPCODE.put("011111", "VADD");
-		OPCODE.put("100000", "VSUB");
+		OPCODE.put("011101", "HLT");
+		OPCODE.put("011110", "HLT");
+		OPCODE.put("011111", "HLT");
+		OPCODE.put("100000", "HLT");   // change to HLT
 		OPCODE.put("100001", "LDX");
-		OPCODE.put("100010", "LDFR");
-		OPCODE.put("100011", "STFR");
+		OPCODE.put("100010", "HLT");
+		OPCODE.put("100011", "HLT");
+		OPCODE.put("100100", "HLT");   // SETCCE
+OPCODE.put("100101", "HLT");
+OPCODE.put("100110", "HLT");
+OPCODE.put("100111", "HLT");
+OPCODE.put("101000", "HLT");
+OPCODE.put("101001", "HLT");
+OPCODE.put("101010", "HLT");
+OPCODE.put("101011", "HLT");
+OPCODE.put("101100", "HLT");
+OPCODE.put("101101", "HLT");
+OPCODE.put("101110", "HLT");
+OPCODE.put("101111", "HLT");
+OPCODE.put("110000", "HLT");
+OPCODE.put("110001", "HLT");
+OPCODE.put("110010", "HLT");
+OPCODE.put("110011", "HLT");
+OPCODE.put("110100", "HLT");
+OPCODE.put("110101", "HLT");
+OPCODE.put("110110", "HLT");
+OPCODE.put("110111", "HLT");
+OPCODE.put("111000", "HLT");
+OPCODE.put("111001", "HLT");
+OPCODE.put("111010", "HLT");
+OPCODE.put("111011", "HLT");
+OPCODE.put("111100", "HLT");
+OPCODE.put("111101", "HLT");
+OPCODE.put("111110", "HLT");
+OPCODE.put("111111", "HLT");
 	}
 
 }

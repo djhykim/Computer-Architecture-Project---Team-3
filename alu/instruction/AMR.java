@@ -6,17 +6,17 @@ import util.EffectiveAddress;
 import util.MachineFaultException;
 import util.StringUtil;
 
-public class JZ extends AbstractInstruction {
+public class AMR extends AbstractInstruction {
 
     int r;
     int ix;
     int i;
     int address;
-    // JZ: Jump if Zero
-// r = register to test (bits 6-7)
-// EA = target address to jump to
-// Operation: if R[r] == 0, PC = EA
-//            else PC = PC + 1 (no jump)
+    // AMR: Add Memory to Register
+// r = destination register (bits 6-7)
+// EA = effective address calculated from ix, i, address fields
+// Operation: R[r] = R[r] + Memory[EA]
+// PC increments by 1 after execution
     @Override
     public void execute(String instruction, Registers registers, MCU mcu) throws MachineFaultException {
 
@@ -27,15 +27,14 @@ public class JZ extends AbstractInstruction {
 
         int effectiveAddress = EffectiveAddress.calculateEA(ix, address, i, mcu, registers);
 
-        if (registers.getRnByNum(r) == 0) {
-            registers.setPC(effectiveAddress);
-        } else {
-            registers.increasePCByOne();
-        }
+        int value = registers.getRnByNum(r) + mcu.fetchFromCache(effectiveAddress);
+        registers.setRnByNum(r, value);
+
+        registers.increasePCByOne();
     }
 
     @Override
     public String getExecuteMessage() {
-        return "JZ executed";
+        return "AMR executed";
     }
 }

@@ -29,7 +29,9 @@ public class LDX extends AbstractInstruction {
 		// first, we read the content of selected Index Register using [IX]
 		registers.setMAR(effectiveAddress);
 		registers.setMBR(mcu.fetchFromCache(registers.getMAR()));
-		registers.setXnByNum(ix, registers.getMBR());
+// For LDX: use ix field if r=0, otherwise use r field
+int targetReg = (r == 0 && ix != 0) ? ix : r;
+registers.setXnByNum(targetReg, registers.getMBR());
 
 		registers.increasePCByOne();
 	}

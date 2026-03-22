@@ -27,7 +27,7 @@ public class STX extends AbstractInstruction {
 		int effectiveAddress = EffectiveAddress.calculateEA(ix, address, i, mcu, registers);
 
 		registers.setMAR(effectiveAddress);
-		registers.setMBR(registers.getXnByNum(ix));
+		registers.setMBR(registers.getXnByNum(r));
 		mcu.storeIntoCache(registers.getMAR(), registers.getMBR());
 
 		registers.increasePCByOne();
