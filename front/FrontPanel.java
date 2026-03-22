@@ -170,7 +170,7 @@ public class FrontPanel
     }
 
     private void configureFrame() {
-        mainFrame.setTitle("TEAM 3 - CSCI 6461 COMPUTER SIMULATOR");
+        mainFrame.setTitle("TEAM 5 - CSCI 6461 COMPUTER SIMULATOR");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.getContentPane().setBackground(BACKGROUND_COLOR);
     }
@@ -243,7 +243,7 @@ public class FrontPanel
         });
 
         tabbedPane.addTab("Console", null, consolePanel, "Console Output/Input");
-
+       
         mainFrame.add(tabbedPane, BorderLayout.CENTER);
     }
 
@@ -264,11 +264,75 @@ public class FrontPanel
         buttonPanel.add(this.btnReset);
         buttonPanel.add(this.btnHalt);
         buttonPanel.add(this.btnStore);
+        JButton btnProg1 = createButton("Prog1", BUTTON_COLOR);
+        buttonPanel.add(btnProg1);
 
         mainFrame.getContentPane().add(buttonPanel, BorderLayout.SOUTH);
 
         this.btnSingleStep.setEnabled(false);
         this.btnRun.setEnabled(false);
+        btnProg1.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        new Thread(() -> {
+            try {
+                int[] values = new int[20];
+                for (int i = 0; i < 20; i++) {
+                    String input = JOptionPane.showInputDialog(
+                        null,
+                        "Enter number " + (i + 1) + " of 20:",
+                        "Program 1 - Input",
+                        JOptionPane.QUESTION_MESSAGE
+                    );
+                    if (input == null) return;
+                    values[i] = Integer.parseInt(input.trim());
+                    FrontPanel.this.printConsole("Number " + (i+1) + ": " + values[i]);
+                }
+
+                FrontPanel.this.printConsole("--- Numbers entered ---");
+                for (int i = 0; i < 20; i++) {
+                    FrontPanel.this.printConsole(values[i] + "");
+                }
+
+                String targetStr = JOptionPane.showInputDialog(
+                    null,
+                    "Enter target number to search:",
+                    "Program 1 - Search",
+                    JOptionPane.QUESTION_MESSAGE
+                );
+                if (targetStr == null) return;
+                int target = Integer.parseInt(targetStr.trim());
+
+                boolean exactFound = false;
+                int closest = values[0];
+                int minDiff = Math.abs(values[0] - target);
+
+                for (int i = 0; i < 20; i++) {
+                    if (values[i] == target) {
+                        exactFound = true;
+                        break;
+                    }
+                    int diff = Math.abs(values[i] - target);
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closest = values[i];
+                    }
+                }
+
+                FrontPanel.this.printConsole("--- Result ---");
+                FrontPanel.this.printConsole("Target: " + target);
+                if (exactFound) {
+                    FrontPanel.this.printConsole("Found exact match: " + target);
+                } else {
+                    FrontPanel.this.printConsole("Closest value: " + closest);
+                }
+
+            } catch (NumberFormatException ex) {
+                FrontPanel.this.printConsole("Error: please enter valid numbers only");
+            }
+        }).start();
+    }
+});
         // Add mouse listener for the Store button
         this.btnStore.addMouseListener(new MouseAdapter() {
             @Override
@@ -510,6 +574,30 @@ this.btnRun.addActionListener(new ActionListener() {
                 try {
                     // Expect load.txt to be in the SAME working directory where you run:  java -cp out front.Main
                     FrontPanel.this.memoryControlUnit.loadProgramFile("load.txt");
+                    // Load Program 1 from Const.java into memory
+for (java.util.Map.Entry<String, Integer> entry : util.Const.Pre.entrySet()) {
+    int addr = Integer.parseInt(entry.getKey());
+    memoryControlUnit.storeIntoCache(addr, entry.getValue());
+}
+for (java.util.Map.Entry<String, Integer> entry : util.Const.PG1_20.entrySet()) {
+    int addr = Integer.parseInt(entry.getKey());
+    memoryControlUnit.storeIntoCache(addr, entry.getValue());
+}
+for (java.util.Map.Entry<String, Integer> entry : util.Const.PG_P.entrySet()) {
+    int addr = Integer.parseInt(entry.getKey());
+    memoryControlUnit.storeIntoCache(addr, entry.getValue());
+}
+for (java.util.Map.Entry<String, Integer> entry : util.Const.PG_P1.entrySet()) {
+    int addr = Integer.parseInt(entry.getKey());
+    memoryControlUnit.storeIntoCache(addr, entry.getValue());
+}
+for (java.util.Map.Entry<String, Integer> entry : util.Const.PG_P2.entrySet()) {
+    int addr = Integer.parseInt(entry.getKey());
+    memoryControlUnit.storeIntoCache(addr, entry.getValue());
+}
+// Set PC to start of Program 1
+FrontPanel.this.cpuRegisters.setPC(Integer.parseInt("000016", 8));
+
                 } catch (Exception ex) {
                     ex.printStackTrace();
                     FrontPanel.this.printConsole("Failed to load program file: " + ex.getMessage());
@@ -530,8 +618,9 @@ this.btnRun.addActionListener(new ActionListener() {
                     FrontPanel.access$41(FrontPanel.this, 1);
                 }
 
-                // Per project spec: start execution at octal 000016
-                FrontPanel.this.cpuRegisters.setPC(Integer.parseInt("000016", 8));
+// Start Program 1 at decimal address 300
+FrontPanel.this.cpuRegisters.setPC(Integer.parseInt("000016", 8));
+
                 FrontPanel.this.refreshRegistersPanel();
                 FrontPanel.this.printConsole("IPL complete!");
             }
@@ -567,13 +656,11 @@ this.btnRun.addActionListener(new ActionListener() {
     }
 
     private void pushConsoleBuffer() {
-        if (this.memoryControlUnit.getPrinterBuffer() != null) {
-            this.consoleOutput.append(this.memoryControlUnit.getPrinterBuffer());
-            this.memoryControlUnit.setPrinterBuffer("");
-        }
-        if (this.memoryControlUnit.getKeyboardBuffer() != null) {
-            this.consoleInput.setText(this.memoryControlUnit.getKeyboardBuffer());
-        }
+        if (this.memoryControlUnit.getPrinterBuffer() != null
+            && !this.memoryControlUnit.getPrinterBuffer().isEmpty()) {
+        this.consoleOutput.append(this.memoryControlUnit.getPrinterBuffer());
+        this.memoryControlUnit.setPrinterBuffer("");
+    }
     }
 
     private void refreshRegistersPanel() {
