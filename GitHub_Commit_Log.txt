@@ -1,0 +1,35 @@
+95166d2 Merge remote-tracking branch 'origin/main'
+b1c4db4 Part II of Design Notes for simulator
+5554252 Part II of Operation manual for simulator
+81e7b77 Add files via upload
+9323641 Add files via upload
+b51ce26 Part II: alu, util, simulator jar, manifest, load, input - Manogna
+cd6ada1 Add Part 1 Design Notes - Team 3
+f6a9a7b Add Operation Manual - Team 3
+2d33068 Add files via upload
+5f77c5b Add util classes, all instruction classes, FrontPanel GUI and simulator JAR - Part 1 Team 3
+3dc23b6 Remove incorrectly added files from wrong repo
+c5e0cea Add util classes, all instruction classes, FrontPanel GUI and simulator JAR - Part 1 Team 3
+440976c Operation manual for simulator
+de14d6b Merge remote-tracking branch 'origin/main'
+907568b Readme file for Assembler
+b776e56 Add files via upload
+47a0e5e Add files via upload
+89cf0e9 Update DesignNotes.pdf
+af442fa Updated DesignNotes
+df55c05 Merge remote-tracking branch 'origin/main'
+2be39c4 Instructions and requirements for users to navigate through the assembler
+c72de27 git add
+c5ab81a Delete Design Notes.pdf
+8b7690b Update MANIFEST.MF and design notes
+0c29252 Regenerate JAR compiled for JDK 21
+11d4c52  ADD MANIFEST.MF for JAR Configuration
+f26ded6 Merge branch 'main' of https://github.com/djhykim/Computer-Architecture-Project---Team-3 # Please enter a commit message to explain why this merge is necessary, # especially if it merges an updated upstream into a topic branch. # # Lines starting with '#' will be ignored, and an empty message aborts # the commit.
+e628bd2 Add executable JAR file compiled for JDK 21
+a6d4d1d Delete Assembler/Assembler$LineParts.class
+9be0b8a Delete Assembler/Assembler.class
+2f47e37 Delete Assembler/Assembler$Token.class
+711c517 Recompile assembler targeting JDK 21 for compatibility
+f8fb44d Merge branch 'main' of https://github.com/djhykim/Computer-Architecture-Project---Team-3 # Please enter a commit message to explain why this merge is necessary, # especially if it merges an updated upstream into a topic branch. # # Lines starting with '#' will be ignored, and an empty message aborts # the commit.
+735ea88 Add design notes for assembler
+5067c0e Add files via upload

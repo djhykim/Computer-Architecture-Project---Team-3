@@ -1,0 +1,502 @@
+commit 95166d233b95e83ecbe4aee3d9190c3d084761ec
+Merge: b1c4db4 81e7b77
+Author: Daniel <djhykim@gmail.com>
+Date:   Sat Mar 21 23:40:55 2026 -0400
+
+    Merge remote-tracking branch 'origin/main'
+
+commit b1c4db437b8dd373bdbc0a27c2058defc5059f10
+Author: Daniel <djhykim@gmail.com>
+Date:   Sat Mar 21 23:40:29 2026 -0400
+
+    Part II of Design Notes for simulator
+
+ DesignNotes.pdf | Bin 153710 -> 108466 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 555425233ce494f0e253163ca77128aa97d2847a
+Author: Daniel <djhykim@gmail.com>
+Date:   Sat Mar 21 23:38:00 2026 -0400
+
+    Part II of Operation manual for simulator
+
+ OperationManual.pdf | Bin 208378 -> 142180 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 81e7b775fff765824612b8419dc6ae57fddb9804
+Author: Nithin <nithinam86@gmail.com>
+Date:   Sat Mar 21 23:26:56 2026 -0400
+
+    Add files via upload
+
+ memory/MCU.class            | Bin 0 -> 4467 bytes
+ memory/MCU.java             |  22 ++++++++++------------
+ memory/Test$CacheLine.class | Bin 0 -> 743 bytes
+ memory/Test.class           | Bin 0 -> 987 bytes
+ memory/Test.java            |  16 ++++++++++++++--
+ 5 files changed, 24 insertions(+), 14 deletions(-)
+
+commit 9323641b39aeb16552d6364e79ac001f1deaff50
+Author: Nithin <nithinam86@gmail.com>
+Date:   Sat Mar 21 23:25:40 2026 -0400
+
+    Add files via upload
+
+ cpu/Registers.class        | Bin 0 -> 7996 bytes
+ front/FrontPanel$1$1.class | Bin 0 -> 1397 bytes
+ front/FrontPanel$1.class   | Bin 0 -> 783 bytes
+ front/FrontPanel$2.class   | Bin 0 -> 2889 bytes
+ front/FrontPanel$3.class   | Bin 0 -> 3060 bytes
+ front/FrontPanel$4.class   | Bin 0 -> 2450 bytes
+ front/FrontPanel$5.class   | Bin 0 -> 2288 bytes
+ front/FrontPanel$6.class   | Bin 0 -> 2314 bytes
+ front/FrontPanel$7.class   | Bin 0 -> 655 bytes
+ front/FrontPanel$8.class   | Bin 0 -> 3492 bytes
+ front/FrontPanel.class     | Bin 0 -> 19525 bytes
+ front/FrontPanel.java      | 109 ++++++++++++++++++++++++++++++++++++++++-----
+ front/Main$1.class         | Bin 0 -> 652 bytes
+ front/Main.class           | Bin 0 -> 426 bytes
+ main/CPU.class             | Bin 0 -> 3231 bytes
+ main/CPU.java              |  73 ++++++++++++++++++++++++++++++
+ main/Main.class            | Bin 0 -> 2196 bytes
+ main/Main.java             |  81 +++++++++++++++++++++++++++++++++
+ 18 files changed, 252 insertions(+), 11 deletions(-)
+
+commit b51ce26b2d219626deda3d78a2f30a45af442422
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sat Mar 21 23:24:52 2026 -0400
+
+    Part II: alu, util, simulator jar, manifest, load, input - Manogna
+
+ alu/instruction/AIR.class                 | Bin 0 -> 881 bytes
+ alu/instruction/AIR.java                  |  34 ++++++++++++
+ alu/instruction/AMR.class                 | Bin 0 -> 1093 bytes
+ alu/instruction/AMR.java                  |  40 ++++++++++++++
+ alu/instruction/AND.class                 | Bin 0 -> 854 bytes
+ alu/instruction/AND.java                  |  29 ++++++++++
+ alu/instruction/AbstractInstruction.class | Bin 0 -> 403 bytes
+ alu/instruction/DVD.class                 | Bin 0 -> 1128 bytes
+ alu/instruction/DVD.java                  |  49 +++++++++++++++++
+ alu/instruction/HLT.class                 | Bin 0 -> 581 bytes
+ alu/instruction/HLT.java                  |  17 ++++++
+ alu/instruction/IN.class                  | Bin 0 -> 1211 bytes
+ alu/instruction/IN.java                   |  40 ++++++++++++++
+ alu/instruction/JCC.class                 | Bin 0 -> 1074 bytes
+ alu/instruction/JCC.java                  |  42 +++++++++++++++
+ alu/instruction/JGE.class                 | Bin 0 -> 1066 bytes
+ alu/instruction/JGE.java                  |  37 +++++++++++++
+ alu/instruction/JMA.class                 | Bin 0 -> 912 bytes
+ alu/instruction/JMA.java                  |  31 +++++++++++
+ alu/instruction/JNE.class                 | Bin 0 -> 1066 bytes
+ alu/instruction/JNE.java                  |  37 +++++++++++++
+ alu/instruction/JSR.class                 | Bin 0 -> 968 bytes
+ alu/instruction/JSR.java                  |  36 +++++++++++++
+ alu/instruction/JZ.class                  | Bin 0 -> 1063 bytes
+ alu/instruction/JZ.java                   |  85 ++++++++++++++----------------
+ alu/instruction/LDA.class                 | Bin 0 -> 1446 bytes
+ alu/instruction/LDR.class                 | Bin 0 -> 1613 bytes
+ alu/instruction/LDX.class                 | Bin 0 -> 1613 bytes
+ alu/instruction/LDX.java                  |   4 +-
+ alu/instruction/MLT.class                 | Bin 0 -> 1109 bytes
+ alu/instruction/MLT.java                  |  44 ++++++++++++++++
+ alu/instruction/NOT.class                 | Bin 0 -> 805 bytes
+ alu/instruction/NOT.java                  |  27 ++++++++++
+ alu/instruction/ORR.class                 | Bin 0 -> 854 bytes
+ alu/instruction/ORR.java                  |  29 ++++++++++
+ alu/instruction/OUT.class                 | Bin 0 -> 1380 bytes
+ alu/instruction/OUT.java                  |  32 +++++++++++
+ alu/instruction/RFS.class                 | Bin 0 -> 773 bytes
+ alu/instruction/RFS.java                  |  28 ++++++++++
+ alu/instruction/RRC.class                 | Bin 0 -> 1024 bytes
+ alu/instruction/RRC.java                  |  48 +++++++++++++++++
+ alu/instruction/SIR.class                 | Bin 0 -> 881 bytes
+ alu/instruction/SIR.java                  |  30 +++++++++++
+ alu/instruction/SMR.class                 | Bin 0 -> 1093 bytes
+ alu/instruction/SMR.java                  |  36 +++++++++++++
+ alu/instruction/SOB.class                 | Bin 0 -> 1122 bytes
+ alu/instruction/SOB.java                  |  45 ++++++++++++++++
+ alu/instruction/SRC.class                 | Bin 0 -> 1042 bytes
+ alu/instruction/SRC.java                  |  51 ++++++++++++++++++
+ alu/instruction/STR.class                 | Bin 0 -> 1613 bytes
+ alu/instruction/STX.class                 | Bin 0 -> 1613 bytes
+ alu/instruction/STX.java                  |   2 +-
+ alu/instruction/TRR.class                 | Bin 0 -> 896 bytes
+ alu/instruction/TRR.java                  |  36 +++++++++++++
+ load.txt                                  |  32 +++++------
+ manifest.txt                              |   2 +
+ simulator.jar                             | Bin 52636 -> 75029 bytes
+ util/Const$ConditionCode.class            | Bin 0 -> 1306 bytes
+ util/Const$DevId.class                    | Bin 0 -> 1191 bytes
+ util/Const$FaultCode.class                | Bin 0 -> 1633 bytes
+ util/Const.class                          | Bin 0 -> 28373 bytes
+ util/Const.java                           |  46 ++++++++++++----
+ util/EffectiveAddress.class               | Bin 0 -> 1610 bytes
+ util/MachineFaultException.class          | Bin 0 -> 560 bytes
+ util/StringUtil.class                     | Bin 0 -> 1505 bytes
+ 65 files changed, 897 insertions(+), 72 deletions(-)
+
+commit cd6ada18610ee41531990f0eeb0ca09adc8f45dd
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Mar 1 10:48:29 2026 -0500
+
+    Add Part 1 Design Notes - Team 3
+
+ Project1_ Operation Manual.pdf | Bin 208378 -> 0 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit f6a9a7b290b78849ecb7f8d459dc053382abafba
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Mar 1 10:45:45 2026 -0500
+
+    Add Operation Manual - Team 3
+
+ Project1_ Operation Manual.pdf | Bin 0 -> 208378 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2d330688cf3021674b9866b4495d4e1736935fc8
+Author: Nithin <nithinam86@gmail.com>
+Date:   Sun Mar 1 09:59:09 2026 -0500
+
+    Add files via upload
+
+ cpu/Registers.java                            | 680 ++++++++++++++++++++++++++
+ input.txt                                     |  10 +-
+ load.txt                                      |  15 +-
+ memory/MCU.java                               | 201 ++++++++
+ memory/Test.java                              |  53 ++
+ out/META-INF/MANIFEST.MF                      |   1 +
+ out/alu/instruction/AbstractInstruction.class | Bin 0 -> 403 bytes
+ out/alu/instruction/JZ.class                  | Bin 0 -> 1625 bytes
+ out/alu/instruction/LDA.class                 | Bin 0 -> 1446 bytes
+ out/alu/instruction/LDR.class                 | Bin 0 -> 1613 bytes
+ out/alu/instruction/LDX.class                 | Bin 0 -> 1613 bytes
+ out/alu/instruction/STR.class                 | Bin 0 -> 1613 bytes
+ out/alu/instruction/STX.class                 | Bin 0 -> 1613 bytes
+ out/cpu/Registers.class                       | Bin 0 -> 7996 bytes
+ out/front/FrontPanel$1$1.class                | Bin 0 -> 1301 bytes
+ out/front/FrontPanel$1.class                  | Bin 0 -> 687 bytes
+ out/front/FrontPanel$2.class                  | Bin 0 -> 2964 bytes
+ out/front/FrontPanel$3.class                  | Bin 0 -> 2354 bytes
+ out/front/FrontPanel$4.class                  | Bin 0 -> 2192 bytes
+ out/front/FrontPanel$5.class                  | Bin 0 -> 2218 bytes
+ out/front/FrontPanel$6.class                  | Bin 0 -> 559 bytes
+ out/front/FrontPanel$7.class                  | Bin 0 -> 2333 bytes
+ out/front/FrontPanel.class                    | Bin 0 -> 19485 bytes
+ out/front/Main$1.class                        | Bin 0 -> 652 bytes
+ out/front/Main.class                          | Bin 0 -> 426 bytes
+ out/memory/MCU.class                          | Bin 0 -> 4298 bytes
+ out/memory/Test$CacheLine.class               | Bin 0 -> 645 bytes
+ out/memory/Test.class                         | Bin 0 -> 987 bytes
+ out/util/Const$ConditionCode.class            | Bin 0 -> 1306 bytes
+ out/util/Const$DevId.class                    | Bin 0 -> 1191 bytes
+ out/util/Const$FaultCode.class                | Bin 0 -> 1633 bytes
+ out/util/Const.class                          | Bin 0 -> 28344 bytes
+ out/util/EffectiveAddress.class               | Bin 0 -> 1610 bytes
+ out/util/MachineFaultException.class          | Bin 0 -> 560 bytes
+ out/util/StringUtil.class                     | Bin 0 -> 1505 bytes
+ 35 files changed, 948 insertions(+), 12 deletions(-)
+
+commit 5f77c5b1e71b32239924d9b96cb6fbcf57402e00
+Author: Manogna <manogna@Manognas-MacBook-Air.local>
+Date:   Sun Mar 1 09:53:36 2026 -0500
+
+    Add util classes, all instruction classes, FrontPanel GUI and simulator JAR - Part 1 Team 3
+
+ alu/.DS_Store                            |  Bin 0 -> 8196 bytes
+ alu/instruction/AbstractInstruction.java |   33 +
+ alu/instruction/JZ.java                  |   46 ++
+ alu/instruction/LDA.java                 |   41 ++
+ alu/instruction/LDR.java                 |   44 ++
+ alu/instruction/LDX.java                 |   43 ++
+ alu/instruction/STR.java                 |   45 ++
+ alu/instruction/STX.java                 |   42 ++
+ front/FrontPanel.java                    |  774 ++++++++++++++++++++
+ front/Main.java                          |   17 +
+ simulator.jar                            |  Bin 0 -> 52636 bytes
+ util/Const.java                          | 1158 ++++++++++++++++++++++++++++++
+ util/EffectiveAddress.java               |   90 +++
+ util/MachineFaultException.java          |   34 +
+ util/StringUtil.java                     |   57 ++
+ 15 files changed, 2424 insertions(+)
+
+commit 3dc23b6604ea13a1dec3bb5a6c1e646c205ad134
+Author: Manogna <manogna@Manognas-MacBook-Air.local>
+Date:   Sun Mar 1 09:48:53 2026 -0500
+
+    Remove incorrectly added files from wrong repo
+
+ alu/.DS_Store                            |  Bin 8196 -> 0 bytes
+ alu/instruction/AbstractInstruction.java |   33 -
+ alu/instruction/JZ.java                  |   46 --
+ alu/instruction/LDA.java                 |   41 --
+ alu/instruction/LDR.java                 |   44 --
+ alu/instruction/LDX.java                 |   43 --
+ alu/instruction/STR.java                 |   45 --
+ alu/instruction/STX.java                 |   42 --
+ front/FrontPanel.java                    |  774 --------------------
+ front/Main.java                          |   17 -
+ simulator.jar                            |  Bin 52636 -> 0 bytes
+ util/Const.java                          | 1158 ------------------------------
+ util/EffectiveAddress.java               |   90 ---
+ util/MachineFaultException.java          |   34 -
+ util/StringUtil.java                     |   57 --
+ 15 files changed, 2424 deletions(-)
+
+commit c5e0ceafe5a15bbb6a596b5607a45fa45b8a47cf
+Author: Manogna <manogna@Manognas-MacBook-Air.local>
+Date:   Sun Mar 1 09:46:44 2026 -0500
+
+    Add util classes, all instruction classes, FrontPanel GUI and simulator JAR - Part 1 Team 3
+
+ alu/.DS_Store                            |  Bin 0 -> 8196 bytes
+ alu/instruction/AbstractInstruction.java |   33 +
+ alu/instruction/JZ.java                  |   46 ++
+ alu/instruction/LDA.java                 |   41 ++
+ alu/instruction/LDR.java                 |   44 ++
+ alu/instruction/LDX.java                 |   43 ++
+ alu/instruction/STR.java                 |   45 ++
+ alu/instruction/STX.java                 |   42 ++
+ front/FrontPanel.java                    |  774 ++++++++++++++++++++
+ front/Main.java                          |   17 +
+ simulator.jar                            |  Bin 0 -> 52636 bytes
+ util/Const.java                          | 1158 ++++++++++++++++++++++++++++++
+ util/EffectiveAddress.java               |   90 +++
+ util/MachineFaultException.java          |   34 +
+ util/StringUtil.java                     |   57 ++
+ 15 files changed, 2424 insertions(+)
+
+commit 440976cd33d2ae7bd92655d951c3f13d637ceaac
+Author: Daniel <djhykim@gmail.com>
+Date:   Sun Mar 1 09:26:49 2026 -0500
+
+    Operation manual for simulator
+
+ OperationManual.pdf | Bin 0 -> 208378 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit de14d6b3bb31dd3673eb79bd69d821234a219d56
+Merge: 907568b b776e56
+Author: Daniel <djhykim@gmail.com>
+Date:   Mon Feb 16 22:23:30 2026 -0500
+
+    Merge remote-tracking branch 'origin/main'
+
+commit 907568b1df2723117bf62776731b530ccf57dc4f
+Author: Daniel <djhykim@gmail.com>
+Date:   Mon Feb 16 22:23:11 2026 -0500
+
+    Readme file for Assembler
+
+ README.txt | 37 +++++++++++++++++++++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+
+commit b776e5609b9e1ee8e28c99b5edd1e966fcbb9681
+Author: Nithin <nithinam86@gmail.com>
+Date:   Mon Feb 16 21:30:48 2026 -0500
+
+    Add files via upload
+
+ input.txt   |  6 ++++++
+ listing.txt | 18 ++++++++++++++++++
+ load.txt    | 15 +++++++++++++++
+ source.txt  | 18 ++++++++++++++++++
+ 4 files changed, 57 insertions(+)
+
+commit 47a0e5efa8ea42336e06c24d05603eb6215f9b61
+Author: Nithin <nithinam86@gmail.com>
+Date:   Mon Feb 16 21:19:04 2026 -0500
+
+    Add files via upload
+
+ Assembler.java | 325 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 325 insertions(+)
+
+commit 89cf0e9382ef0507473e639a49309dbec9860630
+Merge: af442fa df55c05
+Author: manognabDev <manognab25@gmail.com>
+Date:   Mon Feb 16 19:35:01 2026 -0500
+
+    Update DesignNotes.pdf
+
+commit af442fa988c1c0294fc7962d4615b500ec9a7cc8
+Author: manognabDev <manognab25@gmail.com>
+Date:   Mon Feb 16 19:32:27 2026 -0500
+
+    Updated DesignNotes
+
+ DesignNotes.pdf | Bin 153710 -> 153710 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit df55c0564f23983400e20238974ebe0145f47202
+Merge: 2be39c4 c72de27
+Author: Daniel <djhykim@gmail.com>
+Date:   Mon Feb 16 18:44:04 2026 -0500
+
+    Merge remote-tracking branch 'origin/main'
+
+commit 2be39c4ed48d61e97b03189b2f0e935654682459
+Author: Daniel <djhykim@gmail.com>
+Date:   Mon Feb 16 18:43:24 2026 -0500
+
+    Instructions and requirements for users to navigate through the assembler
+
+ UserGuide.pdf | Bin 0 -> 134079 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c72de27754db1eed7fc3e4d1b8bee515f1e74f86
+Author: Daniel <djhykim@gmail.com>
+Date:   Mon Feb 16 18:28:46 2026 -0500
+
+    git add
+
+ UserGuide.pdf | Bin 0 -> 134079 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit c5ab81a7f5d6b02882f1d64a2d905f199ab195d2
+Author: manognabDev <manognab25@gmail.com>
+Date:   Mon Feb 16 17:19:35 2026 -0500
+
+    Delete Design Notes.pdf
+
+ Design Notes.pdf | Bin 153710 -> 0 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 8b7690b4235195677440c0721491ce7e8103ef62
+Author: manognabDev <manognab25@gmail.com>
+Date:   Mon Feb 16 17:17:56 2026 -0500
+
+    Update MANIFEST.MF and design notes
+
+ DesignNotes.pdf | Bin 0 -> 153710 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0c29252fcdd243721a4dec2c18a5ae6a41b7c8b5
+Author: manognabDev <manognab25@gmail.com>
+Date:   Mon Feb 16 17:13:09 2026 -0500
+
+    Regenerate JAR compiled for JDK 21
+
+ Assembler.jar | Bin 5590 -> 5594 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 11d4c52b5dfc3924b9c772f20cae31a693a947e5
+Author: manognabDev <manognab25@gmail.com>
+Date:   Mon Feb 16 09:32:00 2026 -0500
+
+     ADD MANIFEST.MF for JAR Configuration
+
+ MANIFEST.MF | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit f26ded6a83b3fcc589e7b856e79ee0b3e7d0d604
+Merge: e628bd2 a6d4d1d
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:51:35 2026 -0500
+
+    Merge branch 'main' of https://github.com/djhykim/Computer-Architecture-Project---Team-3
+    # Please enter a commit message to explain why this merge is necessary,
+    # especially if it merges an updated upstream into a topic branch.
+    #
+    # Lines starting with '#' will be ignored, and an empty message aborts
+    # the commit.
+
+commit e628bd22dee52d9e4f79f4caef52927a4f60b6a6
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:48:35 2026 -0500
+
+    Add executable JAR file compiled for JDK 21
+
+ Assembler.jar | Bin 0 -> 5590 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a6d4d1ddac40d38d84c83cdca80279df4fc8d4db
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:44:13 2026 -0500
+
+    Delete Assembler/Assembler$LineParts.class
+
+ Assembler/Assembler$LineParts.class | Bin 403 -> 0 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 9be0b8a5c56dab145dfd92cb44e93803e20a0c97
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:43:58 2026 -0500
+
+    Delete Assembler/Assembler.class
+
+ Assembler/Assembler.class | Bin 7983 -> 0 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2f47e37045f5377d4c58701b2ef39cc368a1627a
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:43:43 2026 -0500
+
+    Delete Assembler/Assembler$Token.class
+
+ Assembler/Assembler$Token.class | Bin 392 -> 0 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 711c517bfea8a7328d969b5b0df0ef78275d42b7
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:37:27 2026 -0500
+
+    Recompile assembler targeting JDK 21 for compatibility
+
+ Assembler$LineParts.class | Bin 0 -> 403 bytes
+ Assembler$Token.class     | Bin 0 -> 392 bytes
+ Assembler.class           | Bin 0 -> 7979 bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit f8fb44d7399a68c596ee09fdaaad2d315c2506f4
+Merge: 735ea88 5067c0e
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:26:43 2026 -0500
+
+    Merge branch 'main' of https://github.com/djhykim/Computer-Architecture-Project---Team-3
+    # Please enter a commit message to explain why this merge is necessary,
+    # especially if it merges an updated upstream into a topic branch.
+    #
+    # Lines starting with '#' will be ignored, and an empty message aborts
+    # the commit.
+
+commit 735ea88ddd06946951b781586d8432e28bdbacd5
+Author: manognabDev <manognab25@gmail.com>
+Date:   Sun Feb 15 23:10:00 2026 -0500
+
+    Add design notes for assembler
+
+ Design Notes.pdf | Bin 0 -> 153710 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5067c0ebe01882eb33b82508951c63e11f58bf3e
+Author: djhykim <81786043+djhykim@users.noreply.github.com>
+Date:   Fri Feb 13 11:28:01 2026 -0500
+
+    Add files via upload
+
+ Assembler/Assembler$LineParts.class                |  Bin 0 -> 403 bytes
+ Assembler/Assembler$Token.class                    |  Bin 0 -> 392 bytes
+ Assembler/Assembler.class                          |  Bin 0 -> 7983 bytes
+ Assembler/Assembler.java                           |  281 +++++
+ Assembler/input.txt                                |    6 +
+ Assembler/listing.txt                              |   18 +
+ Assembler/load.txt                                 |   15 +
+ Assembler/source.txt                               |   18 +
+ .../src/alu/instruction/AbstractInstruction.java   |   33 +
+ Assembler/src/alu/instruction/LDA.java             |   41 +
+ Assembler/src/alu/instruction/LDR.java             |   44 +
+ Assembler/src/alu/instruction/LDX.java             |   43 +
+ Assembler/src/alu/instruction/STR.java             |   45 +
+ Assembler/src/alu/instruction/STX.java             |   42 +
+ Assembler/src/cpu/Registers.java                   |  698 ++++++++++++
+ Assembler/src/front/FrontPanel.java                |  745 +++++++++++++
+ Assembler/src/front/Main.java                      |   17 +
+ Assembler/src/input.txt                            |    6 +
+ Assembler/src/manifest.txt                         |    1 +
+ Assembler/src/memory/MCU.java                      |  207 ++++
+ Assembler/src/memory/Test.java                     |   53 +
+ Assembler/src/util/Const.java                      | 1158 ++++++++++++++++++++
+ Assembler/src/util/EffectiveAddress.java           |   90 ++
+ Assembler/src/util/MachineFaultException.java      |   34 +
+ Assembler/src/util/StringUtil.java                 |   57 +
+ 25 files changed, 3652 insertions(+)
