@@ -3,9 +3,16 @@ package memory;
 import java.util.LinkedList;
 
 import util.Const;
-
+/**
+ * Cache — 16-line fully associative unified cache.
+ * Uses FIFO replacement policy via a LinkedList.
+ * addFirst() inserts new entries at front.
+ * removeLast() evicts the oldest entry when full.
+ */
 public class Test {
-
+	/**
+     * One cache line stores a memory address (tag) and its value (data).
+     */
 	public class CacheLine {
 
 		int tag;
@@ -42,6 +49,11 @@ public class Test {
 	public LinkedList<CacheLine> getCacheLines() {
 		return cacheLines;
 	}
+	/**
+     * Add a new entry to the cache.
+     * If cache is full (16 lines), evict the oldest line (removeLast).
+     * New entry always goes to front (addFirst = most recently used).
+     */
 
 	public void add(int address, int value) {
 		if (this.cacheLines.size() >= Const.CACHE_LINES) {

@@ -135,18 +135,16 @@ public class MCU {
 	 * @return
 	 */
 	public int fetchFromCache(int address) {
-		for (CacheLine line : cache.getCacheLines()) { // check every block
-														// whether the tag is
-														// already exist
-			if (address == line.getTag()) {
-				return line.getData(); // tag exist, return the data of the
-										// block
-			}
-		}
-		// tag not exist
-		int value = fetchFromMemory(address);
-		cache.add(address, value);
-		return value;
+		for (CacheLine line : cache.getCacheLines()) {
+        if (address == line.getTag()) {
+            System.out.println("CACHE HIT: address=" + address + " data=" + line.getData());
+            return line.getData();
+        }
+    }
+    System.out.println("CACHE MISS: address=" + address + " fetching from memory");
+    int value = fetchFromMemory(address);
+    cache.add(address, value);
+    return value;
 	}
 
 	/**
