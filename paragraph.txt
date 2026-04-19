@@ -1,0 +1,6 @@
+The computer is executing instructions correctly.
+Memory stores both data and programs efficiently.
+The processor reads and writes values step by step.
+Assembly language helps us understand machine operations.
+Each instruction changes the state of the system.
+Searching a word requires comparing characters one by one.
